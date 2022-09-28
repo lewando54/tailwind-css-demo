@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +11,13 @@
         th, td{
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
+
+        html, body{
+            height: 100%;
+        }
     </style>
 </head>
-<body class="h-screen flex flex-col justify-start">
+<body class="flex flex-col justify-start">
     <div id="bg-fade-effect" class="fixed inset-0 bg-gray-500 opacity-0 pointer-events-none transition-all duration-500 z-10"></div>
     <header class="flex h-20 flex-col w-full lg:z-10">
         <div class="flex justify-between items-center px-5 py-4 shadow-md">
@@ -33,7 +37,7 @@
             </div>
         </div>
     </header>
-    <main class="flex-1 flex">
+    <main class="flex-1 flex h-full overflow-hidden">
         <nav id="main-nav" class="fixed top-0 w-screen h-full -translate-x-full bottom-0 bg-white z-10 transition-translate duration-500 md:w-3/5 lg:translate-x-0 lg:relative lg:overflow-y-scroll lg:z-0 lg:w-4/12 xl:w-3/12">
             <div class="flex justify-between items-center px-6 py-4 bg-white border lg:hidden">
                 <img class="w-36 h-fit" src="img/PickBazar.webp" alt="PickBazar">
@@ -228,9 +232,9 @@
         <div id="content" class="bg-gray-100 h-full w-full p-5 flex flex-col gap-5 overflow-y-scroll">
             <div class="flex flex-col gap-5">
                 <div class="flex flex-col gap-10 bg-white rounded-md px-5 py-5 shadow-md">
-                    <div class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-5 md:flex-row md:justify-between md:items-center">
                         <p class="text-lg text-center font-medium">Shops</p>
-                        <div class="w-full relative">
+                        <div class="w-full md:w-7/12 relative">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search w-4 h-4 absolute top-4 text-gray-500 left-3" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                             </svg>
@@ -238,18 +242,251 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <table>
-                        <tr>
-                            <th class="font-medium text-sm">Logo</th>
-                            <th class="font-medium text-sm">Name</th>
-                            <th class="font-medium text-sm">Owner Name</th>
-                            <th class="font-medium text-sm"></th>
-                            <th class="font-medium text-sm"></th>
-                            <th class="font-medium text-sm"></th>
-                            <th class="font-medium text-sm"></th>
+                <div class="overflow-auto rounded-md">
+                    <table class="w-full shadow-md">
+                        <tr class="bg-gray-200 whitespace-nowrap">
+                            <th class="font-medium text-sm px-4 py-3">Logo</th>
+                            <th class="font-medium text-sm pl-4 pr-20">
+                                <div class="flex gap-1 items-center">
+                                    <p>Name</p> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill w-3 h-3 relative top-0.5 text-gray-400" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                    </svg>
+                                </div>
+                            </th>
+                            <th class="font-medium text-sm px-5">Owner Name</th>
+                            <th class="font-medium text-sm px-5">   
+                                <div class="flex gap-1 items-center">
+                                    <p>Products</p> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill w-3 h-3 relative top-0.5 text-gray-400" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                    </svg>
+                                </div>
+                            </th>
+                            <th class="font-medium text-sm px-5">
+                                <div class="flex gap-1 items-center">
+                                    <p>Orders</p> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill w-3 h-3 relative top-0.5 text-gray-400" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                    </svg>
+                                </div>
+                            </th>
+                            <th class="font-medium text-sm px-5">
+                                <div class="flex gap-1 items-center">
+                                    <p>Status</p> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill w-3 h-3 relative top-0.5 text-gray-400" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                    </svg>
+                                </div>
+                            </th>
+                            <th class="font-medium text-sm pl-14 pr-5">Actions</th>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop1.webp" alt="Furniture Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Furniture Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">55</td>
+                            <td class="text-sm text-center">8</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-emerald-600 text-white w-2/3 py-1 leading-tight">Active</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-red-600" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop2.webp" alt="Clothing Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Clothing Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">64</td>
+                            <td class="text-sm text-center">4</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-emerald-600 text-white w-2/3 py-1 leading-tight">Active</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-red-600" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop3.webp" alt="Bags Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Bags Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">15</td>
+                            <td class="text-sm text-center">7</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-emerald-600 text-white w-2/3 py-1 leading-tight">Active</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-red-600" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop4.webp" alt="Makeup Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Makeup Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">81</td>
+                            <td class="text-sm text-center">3</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-emerald-600 text-white w-2/3 py-1 leading-tight">Active</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-red-600" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop5.webp" alt="Bakery Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Bakery Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">72</td>
+                            <td class="text-sm text-center">8</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-emerald-600 text-white w-2/3 py-1 leading-tight">Active</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-red-600" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop6.webp" alt="Grocery Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Grocery Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">584</td>
+                            <td class="text-sm text-center">55</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-emerald-600 text-white w-2/3 py-1 leading-tight">Active</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-red-600" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white border-b">
+                            <td class="py-3">
+                                <div class="p-2 flex justify-center items-center">
+                                    <img class="rounded-md w-10 h-10" src="img/shop7.webp" alt="Books Shop">
+                                </div>
+                            </td>
+                            <td class="pl-4 text-sm">Books Shop</td>
+                            <td class="text-sm text-center">Store Owner</td>
+                            <td class="text-sm text-center">67</td>
+                            <td class="text-sm text-center">12</td>
+                            <td class="text-sm text-center">
+                                <div class="flex justify-center">
+                                    <p class="rounded-xl bg-red-600 text-white w-2/3 py-1 leading-tight">Inactive</p>
+                                </div>
+                            </td>
+                            <td class="pl-7 pr-4">
+                                <div class="flex justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-circle-fill w-5 h-5 text-green-600" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye w-5 h-5 text-gray-500" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </div>
+                            </td>
                         </tr>
                     </table>
+                </div>
+                <div class="flex ml-auto gap-2">
+                    <div class="border-2 bg-white p-2 rounded-md w-8 h-8 flex items-center justify-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-left w-8 h-8" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-emerald-600 p-2 w-8 h-8 rounded-md text-white flex items-center justify-center text-sm">
+                        <p>1</p>
+                    </div>
+                    <div class="border-2 bg-white p-2 rounded-md w-8 h-8 flex items-center justify-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>

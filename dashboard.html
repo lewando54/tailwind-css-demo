@@ -13,7 +13,7 @@
         }
     </style>
 </head>
-<body class="h-screen flex flex-col justify-start">
+<body class="h-full flex flex-col justify-start">
     <div id="bg-fade-effect" class="fixed inset-0 bg-gray-500 opacity-0 pointer-events-none transition-all duration-500 z-10"></div>
     <header class="flex h-20 flex-col w-full lg:z-10">
         <div class="flex justify-between items-center px-5 py-4 shadow-md">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </header>
-    <main class="flex-1 flex">
+    <main class="flex-1 flex h-full overflow-hidden">
         <nav id="main-nav" class="fixed top-0 w-screen h-full -translate-x-full bottom-0 bg-white z-10 transition-translate duration-500 md:w-3/5 lg:translate-x-0 lg:relative lg:overflow-y-scroll lg:z-0 lg:w-4/12 xl:w-3/12">
             <div class="flex justify-between items-center px-6 py-4 bg-white border lg:hidden">
                 <img class="w-36 h-fit" src="img/PickBazar.webp" alt="PickBazar">
@@ -301,7 +301,7 @@
 
                 </div>
             </div>
-            <div class="xl:grid xl:grid-cols-2 xl:gap-5">
+            <div class="flex flex-col gap-5 xl:grid xl:grid-cols-2 xl:gap-5">
                 <div class="flex flex-col w-full bg-white rounded-md shadow">
                     <h3 class="font-medium text-center border-b py-3">Recent Orders</h3>
                     <div class="w-full overflow-auto">
